@@ -1,0 +1,82 @@
+  
+  .fundo {
+    width: 350px;
+    height: auto;
+    margin: auto;
+    background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .h1 {
+    text-align: center;
+    color: var(--cor4);
+    font-family: "Coiny", system-ui;
+  }
+  
+  .label {
+    color: var(--cor4);
+    font-family: "Coiny", system-ui;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+  }
+  
+  .input {
+    border: none;
+    padding: 3%;
+    border-radius: 8px;
+    margin-top: 2%;
+  }
+  
+  .venda,
+  .entrega {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+  }
+  
+  .margem {
+    margin-left: 1%;
+  }
+  
+  .produtoo,
+  .vendedorr,
+  .clientee {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bots {
+    display: flex;
+    justify-content: center;
+  }
+
+  .bott {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .botao {
+    margin:  auto;
+    display: inline-block;
+    border: none;
+    background-color: var(--botao);
+    border-radius: 8px;
+    color: var(--cor4);
+    width: 30%;
+    padding: 9px 18px;
+    font-family: "Coiny", system-ui;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .botao:hover {
+    color: var(--cor3);
+    transform: scale(1.04);
+  }
+  
