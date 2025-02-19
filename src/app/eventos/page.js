@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styles from './eventos.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function Eventos() {
   const [mensagem , setMensagem] = useState(false);
@@ -20,6 +22,7 @@ export default function Eventos() {
     }
   return (
     <main>
+      <Header />
       <h1 className={styles.h1}>Pacote para Eventos</h1>
       <div className={styles.fundo}>
         <div className={styles.titulo}><h3 className={styles.h3}>Embalagens</h3></div>
@@ -67,6 +70,7 @@ export default function Eventos() {
           <button className={styles.botao} type="button"><Link className={styles.bott} href="#">Voltar</Link></button>
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

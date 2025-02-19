@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
-
 .pagamento {
   width: 350px;
-    height: auto;
-    margin: auto;
-    background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  margin: auto;
+  background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .titulo {
-  font-family: "Coiny", system-ui;
+  font-family: 'Coiny', system-ui;
   font-size: 25px;
   color: var(--cor4);
   margin-bottom: 10px;
@@ -29,7 +27,7 @@
 
 .label {
   font-size: 20px;
-  font-family: "Coiny", system-ui;
+  font-family: 'Coiny', system-ui;
   color: var(--cor4);
   text-align: left;
   width: 100%;
@@ -41,20 +39,19 @@
 .inputContainer {
   display: flex;
   align-items: center;
-  width: 300px;
-  height: 30px;
+  width: 100%;
   background-color: white;
   border-radius: 10px;
-  padding: 0 10px;
+  padding: 5px 10px;
   gap: 10px;
 }
 
 .input {
-  width: 250px;
-  height: 30px;
+  flex: 1;
   border: none;
-  border-radius: 10px;
-  padding: 5px;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Coiny', system-ui;
 }
 
 .botoes {
@@ -63,7 +60,7 @@
   align-items: center;
   gap: 10px;
   padding-top: 10px;
-  font-family: "Coiny", system-ui;
+  font-family: 'Coiny', system-ui;
 }
 
 .botao {
@@ -76,6 +73,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s, color 0.2s;
+  font-family: 'Coiny', system-ui;
 }
 
 .botao:hover {
@@ -84,6 +82,6 @@
 }
 
 .icone {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }

@@ -1,9 +1,13 @@
 'use client';
 import styles from './emitirRelatorio.module.css';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export default function Relatorio() {
   return (
-    <div className={styles.fundo}>
+    <main>
+      <Header />
+      <div className={styles.fundo}>
       <div className={styles.data}>
         <h1 className={styles.h1}>Emitir relatório</h1>
         <form>
@@ -76,5 +80,8 @@ export default function Relatorio() {
         </div>
       </div>
     </div>
+    <Footer />
+    </main>
+   
   );
 }
