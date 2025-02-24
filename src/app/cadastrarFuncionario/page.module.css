@@ -7,23 +7,14 @@
 
 .form{
     background: linear-gradient(#FBD1FF 0%, #FFA4EB 100%);
-    width: 400px;
-    height: 650px;
+    width: 430px;
+    height: 760px;
     margin: auto;
     display: block;
     margin-bottom: 30px;
     margin-top: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--cor2);
-}
-
-.naoPossuiConta{
-    display: flex;
-    gap: 3px;
-    font-family: "Coiny", system-ui;
-    font-weight: none;
-    margin-left: 23px;
-    color: var(--cor4);
 }
 
 .link {
@@ -37,6 +28,6 @@
     }
 
     .naoPossuiConta{
-        display: block;
+        display: block;
     }
 }
