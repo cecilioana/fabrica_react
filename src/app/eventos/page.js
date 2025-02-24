@@ -7,18 +7,19 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function Eventos() {
-  const [mensagem, setMensagem] = useState(false);
+  const [mensagem , setMensagem] = useState(false);
 
-    function msg(event) {
-        const arquivo = event.target.files;
-        if (arquivo.length > 0) {
-            setMensagem(true);
-            setTimeout(() => setMensagem(false), 3000);
-        } else {
-            setMensagem(false); 
-        }
+  function msg(event){
+    const arquivo = event.target.files;
+    if (arquivo.length > 0){
+      setMensagem(true);
+      alert("Imagem anexada com sucesso");
+      
+    } else {
+      setMensagem(false); 
+      alert("Nenhuma imagem foi anexada");
+     }
     }
-
   return (
     <main>
       <Header />
