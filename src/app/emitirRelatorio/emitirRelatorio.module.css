@@ -29,7 +29,14 @@
     padding: 3%;
     border-radius: 8px;
     margin-top: 2%;
+    font-family: "Coiny", system-ui;
+    color: var(--cor4);
   }
+
+  .label ::placeholder{
+    color: var(--cor4);
+  }
+
   
   .venda,
   .entrega {

@@ -1,25 +1,24 @@
 import styles from "./page.module.css"
 import Footer from "@/components/Footer"
-import Header from "@/components/Header"
 import { Formulario, Botao } from "@/components/Form"
 import Link from "next/link"
+import Header from "@/components/Header"
 
 export default function cadastrarFuncionario() {
     return (
         <div>
             <Header />
             <form className={styles.form}>
-                <h1 className={styles.h1}>Cadastrar Funcionário</h1>
+                <h1 className={styles.h1}>Cadastrar Funcionário</h1>
 
                 <Formulario 
                 name="nome"
                 text="Nome"
                 type="text" 
                 id="nome" 
-                placeholder="Digite o nome do funcionário"
+                placeholder="Digite o nome do funcionário"
                 src="/images/nome.png"
                 alt="Nome: "
-                required 
                 />
 
                 <Formulario 
@@ -27,10 +26,9 @@ export default function cadastrarFuncionario() {
                 text="E-mail"
                 type="email" 
                 id="email" 
-                placeholder="Digite o e-mail do funcionário"
+                placeholder="Digite o e-mail do funcionário"
                 src="/images/email.png"
                 alt="E-mail: "
-                required 
                 />
 
                 <Formulario 
@@ -38,11 +36,19 @@ export default function cadastrarFuncionario() {
                 text="Telefone"
                 type="text" 
                 id="telefone" 
-                placeholder="Digite o telefone do funcionário"
+                placeholder="Digite o telefone do funcionário"
                 src="/images/telefone1.png"
                 alt="Telefone: "
-                onInput={(e) => e.target.value = e.target.value.replace(/\D/g, '')}
-                required
+                />
+
+                <Formulario 
+                name="rg"
+                text="RG"
+                type="text" 
+                id="rg" 
+                placeholder="Digite o RG do funcionário"
+                src="/images/rg.png"
+                alt="RG: "
                 />
 
                 <Formulario 
@@ -50,38 +56,34 @@ export default function cadastrarFuncionario() {
                 text="CPF"
                 type="text" 
                 id="cpf" 
-                placeholder="Digite o cpf do funcionário"
+                placeholder="Digite o cpf do funcionário"
                 src="/images/cpf.png"
                 alt="CPF: "
-                required 
                 />
 
                 <Formulario 
                 name="endereco"
-                text="Endereço"
+                text="Endereço"
                 type="text" 
                 id="endereco" 
-                placeholder="Digite o endereço do funcionário"
+                placeholder="Digite o endereço do funcionário"
                 src="/images/endereco.png"
-                alt="Endereço: "
-                required 
+                alt="Endereço: "
                 />
 
                 <Botao
-                href="/area"
-                type="reset"
+                href="/"
                 text="Cancelar" 
                 />
 
                 <Botao
-                href="/area"
-                type="submit"
+                href="/"
                 text="Confirmar" 
                 />
                 
             </form>
 
             <Footer />
-        </div>
-    )
+        </div>
+    )
 }

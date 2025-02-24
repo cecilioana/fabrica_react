@@ -4,18 +4,21 @@ import { useState } from 'react';
 import styles from './page.module.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export default function SolicitarDevolucao() {
-    const [mensagem, setMensagem] = useState(false);
+    const [mensagem , setMensagem] = useState(false);
 
-    function msg(event) {
-        const arquivo = event.target.files;
-        if (arquivo.length > 0) {
-            setMensagem(true);
-            setTimeout(() => setMensagem(false), 3000);
-        } else {
-            setMensagem(false); 
-        }
+  function msg(event){
+    const arquivo = event.target.files;
+    if (arquivo.length > 0){
+      setMensagem(true);
+      alert("Imagem anexada com sucesso");
+      
+    } else {
+      setMensagem(false); 
+      alert("Nenhuma imagem foi anexada");
+     }
     }
 
     return (
@@ -94,19 +97,13 @@ export default function SolicitarDevolucao() {
 
                     <div className={styles.buttons}>
                         <button className={`${styles.button} ${styles.cancel}`} type="button">
-                            Cancelar
+                            <Link href='/vendaCupcake'>Cancelar</Link>
                         </button>
                         <button className={`${styles.button} ${styles.confirm}`} type="submit">
-                            Confirmar
+                        <Link href='/vendaCupcake'>Confirmar</Link>
                         </button>
                     </div>
                 </form>
-
-                {mensagem && (
-                    <div className={styles.aviso}>
-                        Imagem anexada com sucesso! 𐙚  
-                    </div>
-                )}
 
             </div>
             <Footer />

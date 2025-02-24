@@ -7,17 +7,19 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function CadastrarFeedback() {
-    const [mensagem, setMensagem] = useState(false);
+    const [mensagem , setMensagem] = useState(false);
 
-    function msg(event) {
-        const arquivo = event.target.files;
-        if (arquivo.length > 0) {
-            setMensagem(true);
-            setTimeout(() => setMensagem(false), 3000);
-        } else {
-            setMensagem(false); 
-        }
-    }
+    function msg(event){
+      const arquivo = event.target.files;
+      if (arquivo.length > 0){
+        setMensagem(true);
+        alert("Imagem anexada com sucesso");
+        
+      } else {
+        setMensagem(false); 
+        alert("Nenhuma imagem foi anexada");
+       }
+      }
 
     return (
         <div>
@@ -63,10 +65,10 @@ export default function CadastrarFeedback() {
                 )}
 
                 <div className={styles.buttons}>
-                    <button className={styles.button} id="back">Voltar</button>
-                    <Link href="" passHref>
-                        <button className={styles.button} id="confirm">Confirmar</button>
-                    </Link>
+                    <button className={styles.button} id="back"><Link href='/vendaCupcake'>Voltar</Link></button>
+                   
+                    <button className={styles.button} id="confirm"> <Link href="/vendaCupcake"> Confirmar</Link></button>
+                   
                 </div>
             </div>
             <Footer />
