@@ -56,7 +56,7 @@ export default function criarConta() {
                 /> 
 
                 <Botao
-                href="/"
+                href="/pedido"
                 type="submit"
                 text="Entrar" 
                 />
