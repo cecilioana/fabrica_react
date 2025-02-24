@@ -58,16 +58,10 @@ export default function CadastrarFeedback() {
                     </span>
                 </label>
 
-                {mensagem && (
-                    <div className={styles.aviso}>
-                        Imagem anexada com sucesso! 𐙚  
-                    </div>
-                )}
-
                 <div className={styles.buttons}>
                     <button className={styles.button} id="back"><Link href='/vendaCupcake'>Voltar</Link></button>
                    
-                    <button className={styles.button} id="confirm"> <Link href="/vendaCupcake"> Confirmar</Link></button>
+                    <button className={styles.button} id="confirm"> <Link href="/pedido"> Confirmar</Link></button>
                    
                 </div>
             </div>
