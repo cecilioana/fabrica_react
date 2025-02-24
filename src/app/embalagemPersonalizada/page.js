@@ -31,8 +31,11 @@ export default function embalagemPersonalizada() {
             </div>
 
             <div className={styles.buttons}>
+                <button className={styles.button} type="reset">
+                    <Link className={styles.link} href="/pedido">Cancelar</Link>
+                </button>
                 <button className={styles.button} type="submit">
-                    <Link className={styles.link} href="/">Voltar</Link>
+                    <Link className={styles.link} href="/pedido">Confirmar</Link>
                 </button>
             </div>
 

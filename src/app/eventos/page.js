@@ -7,19 +7,18 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function Eventos() {
-  const [mensagem , setMensagem] = useState(false);
+  const [mensagem, setMensagem] = useState(false);
 
-  function msg(event){
-    const arquivo = event.target.files;
-    if (arquivo.length > 0){
-      setMensagem(true);
-      alert("Imagem anexada com sucesso");
-      
-    } else {
-      setMensagem(false); 
-      alert("Nenhuma imagem foi anexada");
-     }
+    function msg(event) {
+        const arquivo = event.target.files;
+        if (arquivo.length > 0) {
+            setMensagem(true);
+            setTimeout(() => setMensagem(false), 3000);
+        } else {
+            setMensagem(false); 
+        }
     }
+
   return (
     <main>
       <Header />
@@ -66,8 +65,8 @@ export default function Eventos() {
         </div>
 
         <div className={styles.bots}>
-          <button className={styles.botao} type="button"><Link className={styles.bott} href="#">Confirmar</Link></button>
-          <button className={styles.botao} type="button"><Link className={styles.bott} href="#">Voltar</Link></button>
+          <button className={styles.botao} type="button"><Link className={styles.bott} href="/pedido">Confirmar</Link></button>
+          <button className={styles.botao} type="button"><Link className={styles.bott} href="/pedido">Voltar</Link></button>
         </div>
       </div>
       <Footer />

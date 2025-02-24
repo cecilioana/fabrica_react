@@ -70,12 +70,12 @@ export default function Relatorio() {
         </form>
         <div className={styles.bots}>
           <button className={styles.botao} type="submit">
-            <a className={styles.bott} href="#">
+            <a className={styles.bott} href="/area">
               Confirmar
             </a>
           </button>
           <button className={styles.botao} type="button">
-            <a href="#">Voltar</a>
+            <a href="/area">Voltar</a>
           </button>
         </div>
       </div>

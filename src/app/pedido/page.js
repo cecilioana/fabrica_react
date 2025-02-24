@@ -158,13 +158,13 @@ export default function Pedido() {
 
           <div className={styles.buttons}>
             <button className={styles.button} type="button" onClick={resetSelect}>
-              <Link className={styles.link} href="/">Cancelar</Link>
+              <Link className={styles.link} href="/pedido">Cancelar</Link>
             </button>
             <button className={styles.button} type="submit">
               <Link className={styles.link} href="/checkout">Finalizar pedido</Link>
             </button>
             <button className={styles.button} type="button" onClick={adicionarAoCarrinho}>
-              <Link className={styles.link} href="/">Carrinho</Link>
+              <Link className={styles.link} href="/pedido">Carrinho</Link>
             </button>
           </div>
 

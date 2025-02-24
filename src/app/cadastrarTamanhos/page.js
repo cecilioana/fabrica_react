@@ -29,8 +29,8 @@ export default function cadastrarTamanhos() {
                         <input className={styles.input} type="text" id="excluirTamanho" name="excluirTamanho" placeholder="Digite aqui..." required></input>
                     </div>
 
-                <button className={styles.button} type="reset"><Link href="">Cancelar</Link></button>
-                <button className={styles.button} type="submit"><Link href="">Confirmar</Link></button>
+                <button className={styles.button} type="reset"><Link href="/area">Cancelar</Link></button>
+                <button className={styles.button} type="submit"><Link href="/area">Confirmar</Link></button>
             </form>
             <Footer />
         </div>

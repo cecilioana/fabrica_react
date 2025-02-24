@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Styles from './realizarPamento.module.css';
+import Link from 'next/link';
 
 export default function Pagamento() {
   return (
@@ -45,10 +46,11 @@ export default function Pagamento() {
 
             <div className={Styles.botoes}>
               <button className={Styles.botao} type="reset">
-                Cancelar
+                <Link href='/area'>Cancelar</Link>
+                
               </button>
               <button className={Styles.botao} type="submit">
-                Confirmar
+                <Link href='/pedido'>Confirmar</Link>
               </button>
             </div>
           </form>
