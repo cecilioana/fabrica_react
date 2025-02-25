@@ -1,8 +1,10 @@
 'use client'
-
+import Footer from "@/components/Footer"
+import { Formulario, Botao } from "@/components/Form"
 import { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function cadastrarIngredientes() {
   const [ingredientes, setIngredientes] = useState({
@@ -29,7 +31,9 @@ export default function cadastrarIngredientes() {
   };
 
   return (
-    <form className={styles.form}>
+    <main>
+        <Header></Header>
+         <form className={styles.form}>
       <h1 className={styles.h1}>Cadastrar Ingredientes</h1>
       <div className={styles.tudo}>
         {Object.entries(ingredientes).map(([categoria, itens]) => (
@@ -66,5 +70,8 @@ export default function cadastrarIngredientes() {
       <Link href='/area'> Confirmar</Link>
        </button>
     </form>
+    <Footer></Footer>
+    </main>
+   
   );
 }
