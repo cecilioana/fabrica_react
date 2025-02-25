@@ -50,7 +50,7 @@ export default function Pagamento() {
                 
               </button>
               <button className={Styles.botao} type="submit">
-                <Link href='/pedido'>Confirmar</Link>
+                <Link href='/area'>Confirmar</Link>
               </button>
             </div>
           </form>
