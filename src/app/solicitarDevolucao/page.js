@@ -100,7 +100,7 @@ export default function SolicitarDevolucao() {
                             <Link href='/vendaCupcake'>Cancelar</Link>
                         </button>
                         <button className={`${styles.button} ${styles.confirm}`} type="submit">
-                        <Link href='/agradecimento'>Confirmar</Link>
+                            <Link href='/agradecimento'>Confirmar</Link>
                         </button>
                     </div>
                 </form>

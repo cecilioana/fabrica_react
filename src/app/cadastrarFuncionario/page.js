@@ -72,12 +72,12 @@ export default function cadastrarFuncionario() {
                 />
 
                 <Botao
-                href="/"
+                href="/area"
                 text="Cancelar" 
                 />
 
                 <Botao
-                href="/"
+                href="/area"
                 text="Confirmar" 
                 />
                 
