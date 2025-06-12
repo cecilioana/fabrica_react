@@ -67,7 +67,7 @@
   
   .botao {
     margin:  auto;
-    display: inline-block;
+    display: flex;
     border: none;
     background-color: var(--botao);
     border-radius: 8px;
@@ -78,10 +78,50 @@
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease;
+    
+    align-items: center;
+    justify-content: center;
   }
   
   .botao:hover {
     color: var(--cor3);
     transform: scale(1.04);
   }
+
+  /* Estilos para a tabela do relatório */
+
+.tabela {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-family: "Coiny", system-ui;
+  color: var(--cor4);
+  background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
+  border-radius: 12px;
+  overflow: hidden; /* para borda arredondada funcionar */
+  box-shadow: 0 2px 8px rgba(255, 164, 235, 0.5);
+}
+
+.tabela thead tr {
+  background-color: var(--botao); /* mesma cor do botão */
+  color: var(--cor4);
+  font-weight: bold;
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: left;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: rgba(251, 209, 255, 0.6); /* tom mais claro para linhas pares */
+}
+
+.tabela tbody tr:hover {
+  background-color: rgba(255, 164, 235, 0.8);
+  cursor: default;
+}
+
   
