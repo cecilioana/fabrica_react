@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './emitirRelatorio.module.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -9,6 +9,23 @@ export default function Relatorio() {
   const [dataFim, setDataFim] = useState('');
   const [pedidos, setPedidos] = useState([]);
   const [mensagem, setMensagem] = useState('');
+  const [ingredientes, setIngredientes] = useState([]);
+  const [recheioSelecionado, setRecheioSelecionado] = useState('');
+
+  useEffect(() => {
+    const buscarIngredientes = async () => {
+      try {
+        const res = await fetch('https://apisweetcandy.dev.vilhena.ifro.edu.br/buscarIngredientes');
+        const data = await res.json();
+        const recheios = data.filter((item) => item.tipo === 'recheio');
+        setIngredientes(recheios);
+      } catch (error) {
+        console.error('Erro ao buscar ingredientes:', error);
+      }
+    };
+
+    buscarIngredientes();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,12 +48,23 @@ export default function Relatorio() {
       } else if (Array.isArray(data) && data.length === 0) {
         setMensagem('Nenhum pedido foi encontrado no intervalo informado.');
       } else {
-        setPedidos(data);
+        const pedidosFiltrados = recheioSelecionado
+          ? data.filter(pedido => pedido.ingredientes.some(ing => ing.nome === recheioSelecionado))
+          : data;
+        setPedidos(pedidosFiltrados);
       }
     } catch (error) {
       setMensagem('Erro ao conectar com a API.');
     }
   };
+
+  const calcularTotais = () => {
+    const totalPedidos = pedidos.length;
+    const valorTotal = pedidos.reduce((total, pedido) => total + pedido.total, 0);
+    return { totalPedidos, valorTotal };
+  };
+
+  const { totalPedidos, valorTotal } = calcularTotais();
 
   return (
     <main>
@@ -68,6 +96,21 @@ export default function Relatorio() {
                   onChange={(e) => setDataFim(e.target.value)}
                 />
               </label>
+              <label className={styles.label}>
+                Recheio
+                <select
+                  className={`${styles.input} ${styles.pesquisa}`}
+                  value={recheioSelecionado}
+                  onChange={(e) => setRecheioSelecionado(e.target.value)}
+                >
+                  <option value="">Todos</option>
+                  {ingredientes.map((ing) => (
+                    <option key={ing.id_ingrediente} value={ing.nome}>
+                      {ing.nome}
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
             <div className={styles.bots}>
               <button className={styles.botao} type="submit">
@@ -84,26 +127,31 @@ export default function Relatorio() {
           )}
 
           {pedidos.length > 0 && (
-            <table style={{ width: '100%', marginTop: '20px', fontFamily: 'Coiny, system-ui', color: 'var(--cor4)', borderCollapse: 'collapse' }}>
-              <thead>
-                <tr style={{ backgroundColor: '#ffa4eb' }}>
-                  <th style={{ padding: '8px', border: '1px solid #fff' }}>ID</th>
-                  <th style={{ padding: '8px', border: '1px solid #fff' }}>Data</th>
-                  <th style={{ padding: '8px', border: '1px solid #fff' }}>Cliente</th>
-                  <th style={{ padding: '8px', border: '1px solid #fff' }}>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pedidos.map((pedido) => (
-                  <tr key={pedido.id} style={{ backgroundColor: '#fbd1ff' }}>
-                    <td style={{ padding: '8px', border: '1px solid #fff' }}>{pedido.id}</td>
-                    <td style={{ padding: '8px', border: '1px solid #fff' }}>{pedido.data}</td>
-                    <td style={{ padding: '8px', border: '1px solid #fff' }}>{pedido.cliente}</td>
-                    <td style={{ padding: '8px', border: '1px solid #fff' }}>R$ {pedido.total.toFixed(2)}</td>
+            <>
+              <table className={styles.tabela}>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Valor</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {pedidos.map((pedido) => (
+                    <tr key={pedido.id}>
+                      <td>{pedido.id}</td>
+                      <td>{pedido.data}</td>
+                      <td>{pedido.cliente}</td>
+                      <td>R$ {pedido.total.toFixed(2)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p style={{ textAlign: 'center', marginTop: '10px', fontFamily: 'Coiny, system-ui', color: 'var(--cor4)' }}>
+                Total de pedidos: {totalPedidos} | Valor total: R$ {valorTotal.toFixed(2)}
+              </p>
+            </>
           )}
         </div>
       </div>

@@ -1,6 +1,5 @@
-  
-  .fundo {
-    width: 350px;
+.fundo {
+    width: 450px;
     height: auto;
     margin: auto;
     background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
@@ -20,6 +19,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3%;
+
   }
   
   .input {
@@ -72,13 +72,13 @@
     background-color: var(--botao);
     border-radius: 8px;
     color: var(--cor4);
-    width: 30%;
-    padding: 9px 18px;
+    width: 100px;
+    padding: 9px 10px;
     font-family: "Coiny", system-ui;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease;
-    
+
     align-items: center;
     justify-content: center;
   }
@@ -88,7 +88,6 @@
     transform: scale(1.04);
   }
 
-  /* Estilos para a tabela do relatório */
 
 .tabela {
   width: 100%;
@@ -124,4 +123,48 @@
   cursor: default;
 }
 
-  
+@media (max-width: 480px) {
+  .fundo {
+    width: 90%; 
+    padding: 15px;
+  }
+
+  .venda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .label {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .bots{
+    width: 100%;
+    gap: 5%;
+  }
+
+  .botao {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .tabela {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .tabela th, .tabela td {
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  .h2 {
+    font-size: 1.2rem;
+  }
+}
