@@ -10,7 +10,7 @@
     text-align: center;
     border-bottom: 0%;
     font-family: "Coiny", system-ui;
-    font-size: 3.5vh;
+    font-size: 3vh;
     color: var(--cor4);
 }
 
@@ -97,8 +97,6 @@
     font-family:  "Coiny", system-ui;
     margin-top: 15px;
 }
-
-
 
 #quantidade1 {
     display: flex;

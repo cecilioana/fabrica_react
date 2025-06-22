@@ -1,16 +1,13 @@
-  
-  .fundo {
-    width: 350px;
+.fundo {
+    width: 450px;
     height: auto;
     margin: auto;
     background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
     border-radius: 20px;
     padding: 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
   }
   
-  .h1 {
+  .h2 {
     text-align: center;
     color: var(--cor4);
     font-family: "Coiny", system-ui;
@@ -22,6 +19,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3%;
+
   }
   
   .input {
@@ -29,7 +27,14 @@
     padding: 3%;
     border-radius: 8px;
     margin-top: 2%;
+    font-family: "Coiny", system-ui;
+    color: var(--cor4);
   }
+
+  .label ::placeholder{
+    color: var(--cor4);
+  }
+
   
   .venda,
   .entrega {
@@ -62,21 +67,104 @@
   
   .botao {
     margin:  auto;
-    display: inline-block;
+    display: flex;
     border: none;
     background-color: var(--botao);
     border-radius: 8px;
     color: var(--cor4);
-    width: 30%;
-    padding: 9px 18px;
+    width: 100px;
+    padding: 9px 10px;
     font-family: "Coiny", system-ui;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.2s ease;
+
+    align-items: center;
+    justify-content: center;
   }
   
   .botao:hover {
     color: var(--cor3);
     transform: scale(1.04);
   }
-  
+
+
+.tabela {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-family: "Coiny", system-ui;
+  color: var(--cor4);
+  background: linear-gradient(#fbd1ff 0%, #ffa4eb 100%);
+  border-radius: 12px;
+  overflow: hidden; /* para borda arredondada funcionar */
+  box-shadow: 0 2px 8px rgba(255, 164, 235, 0.5);
+}
+
+.tabela thead tr {
+  background-color: var(--botao); /* mesma cor do botão */
+  color: var(--cor4);
+  font-weight: bold;
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: left;
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: rgba(251, 209, 255, 0.6); /* tom mais claro para linhas pares */
+}
+
+.tabela tbody tr:hover {
+  background-color: rgba(255, 164, 235, 0.8);
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  .fundo {
+    width: 90%; 
+    padding: 15px;
+  }
+
+  .venda {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .label {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .bots{
+    width: 100%;
+    gap: 5%;
+  }
+
+  .botao {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .tabela {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .tabela th, .tabela td {
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  .h2 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,20 +1,22 @@
 import "./globals.css";
-import Header from '../componentes/Header'
-import Footer from '../componentes/Footer'
+
 
 export const metadata = {
-  title: "Tela de pagamento e eventos",
-  description: "tela de pagamento para funcionários e eventos",
-  author : "Ana Paula",
+  title: "Sweet Candy",
+  charset: 'UTF-8',
+  description: "Cupcakeria",
+  author : "Ana Gabriely, Ana Paula, Isabella, Leticia , Priscila, Thamylla",
+  keywords: 'Doce, Cupcake, Loja',
 };
 
 export default function RootLayout({ children }){
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href= "./images/favicon.ico" />
+      </head>
       <body>
-        <Header/>
         {children}
-        <Footer />
       </body>
     </html>
   );
