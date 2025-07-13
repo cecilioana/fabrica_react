@@ -163,8 +163,8 @@ export default function Relatorio() {
                     </tr>
                   </thead>
                   <tbody>
-                    {pedidos.map((pedido) => (
-                      <tr key={pedido.id_pedido}>
+                    {pedidos.map((pedido, index) => (
+                      <tr key={`${pedido.id_pedido}-${index}`}>
                         <td>{pedido.id_pedido}</td>
                         <td>{pedido.data_criacao}</td>
                         <td>{pedido.nome_completo}</td>
