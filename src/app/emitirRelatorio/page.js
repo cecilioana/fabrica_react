@@ -152,26 +152,28 @@ export default function Relatorio() {
 
           {pedidos.length > 0 && (
             <>
-              <table className={styles.tabela}>
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Data</th>
-                    <th>Cliente</th>
-                    <th>Valor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {pedidos.map((pedido) => (
-                    <tr key={pedido.id_pedido}>
-                      <td>{pedido.id_pedido}</td>
-                      <td>{pedido.data_criacao}</td>
-                      <td>{pedido.nome_completo}</td>
-                      <td>R$ {Number(pedido.valor_total).toFixed(2)}</td>
+              <div className={styles.tabelaWrapper}>
+                <table className={styles.tabela}>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Data</th>
+                      <th>Cliente</th>
+                      <th>Valor</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {pedidos.map((pedido) => (
+                      <tr key={pedido.id_pedido}>
+                        <td>{pedido.id_pedido}</td>
+                        <td>{pedido.data_criacao}</td>
+                        <td>{pedido.nome_completo}</td>
+                        <td>R$ {Number(pedido.valor_total).toFixed(2)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <p
                 style={{
                   textAlign: 'center',
